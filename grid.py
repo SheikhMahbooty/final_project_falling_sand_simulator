@@ -15,5 +15,5 @@ class Grid:
                 particle = self.cells[row][column]
                 if particle is not None:
                     color = particle.color
-                pygame.draw.rect(window, LIGHT_GREY,
+                pygame.draw.rect(window, color,
                                  (column * self.cell_size, row * self.cell_size, self.cell_size - 1, self.cell_size - 1))
