@@ -13,3 +13,7 @@ class Simulation:
         
     def remove_particle(self, row, column):
         self.grid.remove_particle(row, column)
+        
+    def update(self):
+        for row in range(self.grid.rows):
+            for column in range(self.grid.columns):
