@@ -1,5 +1,6 @@
 import pygame
 from grid import Grid
+from particle import SandParticle
 
 pygame.init()
 
@@ -14,6 +15,8 @@ pygame.display.set_caption("Falling Sand")
 
 clock = pygame.time.Clock()
 grid = Grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
+grid.cells[0][0] = SandParticle()
+grid.cells[2][1] = SandParticle()
 
 while True:
     #Event Handling
