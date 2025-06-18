@@ -27,7 +27,12 @@ class Simulation:
         
     def update(self):
         for row in range(self.grid.rows -2, -1, -1):
-            for column in range(self.grid.columns):
+            if row % 2 == 0:
+                column_range = range(self.grid.columns)
+            else:
+                column_range = reversed(range(self.grid.columns))
+                
+            for column in column_range:
                 particle = self.grid.get_cell(row, column)
                 if isinstance(particle, SandParticle):
                     new_pos = particle.update(self.grid, row, column)
