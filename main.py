@@ -30,7 +30,8 @@ while True:
         simulation.add_particle(row, column)
             
     #Updating state
-            
+    simulation.update()
+    
     #Drawing
     window.fill(GREY)
     simulation.draw(window)
