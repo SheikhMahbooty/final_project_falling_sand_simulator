@@ -88,4 +88,22 @@ class Simulation:
                 else:
                     self.add_particle(current_row, current_col)
         
+    def draw_brush(self, window):
+        mouse_pos = pygame.mouse.get_pos()
+        column = mouse_pos[0] // self.cell_size
+        row = mouse_pos[1] // self.cell_size
         
+        brush_visual_size = self.brush_size * self.cell_size
+        color = (255, 255, 255)
+        
+        if self.mode == "rock":
+            color = (100, 100, 100)
+        elif self.mode == "sand":
+            color = (185, 142, 66)
+        elif self.mode == "erase":
+            color = (255, 105, 180)
+            
+        pygame.draw.rect(window, color, (column * self.cell_size, row * self.cell_size, brush_visual_size, brush_visual_size))
+        
+
+
