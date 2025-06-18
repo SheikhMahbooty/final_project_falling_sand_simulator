@@ -14,9 +14,6 @@ pygame.display.set_caption("Falling Sand")
 
 clock = pygame.time.Clock()
 simulation = Simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
-simulation.add_particle(0, 0)
-simulation.add_particle(1, 1)
-simulation.remove_particle(0, 0)
 
 while True:
     #Event Handling
@@ -24,6 +21,13 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+            
+    buttons = pygame.mouse.get_pressed()
+    if buttons[0]:
+        pos = pygame.mouse.get_pos()
+        row = pos[1] // CELL_SIZE
+        column = pos[0] // CELL_SIZE
+        simulation.add_particle(row, column)
             
     #Updating state
             
