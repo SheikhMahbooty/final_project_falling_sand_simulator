@@ -24,6 +24,13 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 simulation.restart()
+            elif event.key == pygame.K_s:
+                print("Sand Mode")
+            elif event.key == pygame.K_r:
+                print("Rock Mode")
+            elif event.key == pygame.K_e:
+                print("Eraser Mode")
+                
             
     buttons = pygame.mouse.get_pressed()
     if buttons[0]:
