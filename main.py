@@ -17,28 +17,8 @@ simulation = Simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
 
 while True:
     #Event Handling
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                simulation.restart()
-            elif event.key == pygame.K_s:
-                print("Sand Mode")
-            elif event.key == pygame.K_r:
-                print("Rock Mode")
-            elif event.key == pygame.K_e:
-                print("Eraser Mode")
+    simulation.handle_controls()
                 
-            
-    buttons = pygame.mouse.get_pressed()
-    if buttons[0]:
-        pos = pygame.mouse.get_pos()
-        row = pos[1] // CELL_SIZE
-        column = pos[0] // CELL_SIZE
-        simulation.add_particle(row, column)
-            
     #Updating state
     simulation.update()
     

@@ -31,17 +31,17 @@ class Simulation:
         
     def handle_controls(self):
         for event in pygame.event.get():
-            if evnet.type == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 self.handle_key(event)
                 
-        self.handle_mouse
+        self.handle_mouse()
 
     def handle_key(self, event):
         if event.key == pygame.K_SPACE:
-                self.restart()
+            self.restart()
         elif event.key == pygame.K_s:
             print("Sand Mode")
         elif event.key == pygame.K_r:
