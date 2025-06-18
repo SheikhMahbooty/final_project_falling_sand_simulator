@@ -5,17 +5,24 @@ pygame.init()
 WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 600
 FPS = 120
+GREY = (29, 29, 29)
 
-Window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Falling Sand")
 
 clock = pygame.time.Clock()
 
 while True:
+    #Event Handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+            
+    #Updating state
+            
+    #Drawing
+    window.fill(GREY)
             
     pygame.display.flip()
     clock.tick(FPS)
