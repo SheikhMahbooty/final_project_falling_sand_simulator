@@ -1,17 +1,25 @@
 import pygame, sys
 from grid import Grid
 from particle import SandParticle
+from particle import RockParticle
+
 
 class Simulation:
     def __init__(self, width, height, cell_size):
         self.grid = Grid(width, height, cell_size)
         self.cell_size = cell_size
+        self.mode = "sand"
         
     def draw(self, window):
         self.grid.draw(window)
         
     def add_particle(self, row, column):
-        self.grid.add_particle(row, column, SandParticle)
+        if self.mode == "sand":
+            particle = SandParticle
+        elif self.mode == "rock":
+            particle = RockParticle
+            
+        self.grid.add_particle(row, column, particle)
         
     def remove_particle(self, row, column):
         self.grid.remove_particle(row, column)
@@ -44,10 +52,13 @@ class Simulation:
             self.restart()
         elif event.key == pygame.K_s:
             print("Sand Mode")
+            self.mode = "sand"
         elif event.key == pygame.K_r:
             print("Rock Mode")
+            self.mode = "rock"
         elif event.key == pygame.K_e:
             print("Eraser Mode")
+            self.mode = "erase"
             
     def handle_mouse(self):
         buttons = pygame.mouse.get_pressed()
