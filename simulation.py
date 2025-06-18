@@ -68,10 +68,8 @@ class Simulation:
             row = pos[1] // self.cell_size
             column = pos[0] // self.cell_size
             
-            if self.mode == "erase":
-                self.grid.remove_particle(row, column)
-            else:
-                self.add_particle(row, column)
+            self.apply_brush(row, column)
+            
                 
     def apply_brush(self, row, column):
         for r in range(self.brush_size):
