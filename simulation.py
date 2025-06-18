@@ -13,6 +13,7 @@ class Simulation:
         
     def draw(self, window):
         self.grid.draw(window)
+        self.draw_brush(window)
         
     def add_particle(self, row, column):
         if self.mode == "sand":
