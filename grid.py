@@ -28,7 +28,7 @@ class Grid:
             
     def is_cell_empty(self, row, column):
         if 0 <= row < self.rows and 0 <= column < self.columns:
-            if self.cell[row][column] is None:
+            if self.cells[row][column] is None:
                 return True
             return False
         
