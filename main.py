@@ -1,4 +1,5 @@
 import pygame
+from simulation import Simulation
 
 pygame.init()
 
@@ -12,7 +13,7 @@ window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Falling Sand")
 
 clock = pygame.time.Clock()
-grid = Grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
+simulation = Simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
 
 
 while True:
@@ -26,6 +27,7 @@ while True:
             
     #Drawing
     window.fill(GREY)
+    simulation.draw(window)
             
     pygame.display.flip()
     clock.tick(FPS)
