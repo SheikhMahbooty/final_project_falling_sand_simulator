@@ -16,6 +16,7 @@ clock = pygame.time.Clock()
 simulation = Simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
 simulation.add_particle(0, 0)
 simulation.add_particle(1, 1)
+simulation.remove_particle(0, 0)
 
 while True:
     #Event Handling
