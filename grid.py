@@ -36,3 +36,8 @@ class Grid:
         if not(0 <= row < self.rows and 0 <= column < self.columns):
             return
         self.cells[row][column] = particle
+        
+    def get_cell(self, row, column):
+        if 0 <= row < self.rows and 0 <= column < self.columns:
+            return self.cells[row][column]
+        return None
