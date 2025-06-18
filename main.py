@@ -1,4 +1,5 @@
 import pygame
+from grid import Grid
 
 pygame.init()
 
@@ -12,6 +13,7 @@ window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Falling Sand")
 
 clock = pygame.time.Clock()
+grid = Grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
 
 while True:
     #Event Handling
@@ -24,6 +26,7 @@ while True:
             
     #Drawing
     window.fill(GREY)
+    grid.draw(window)
             
     pygame.display.flip()
     clock.tick(FPS)
