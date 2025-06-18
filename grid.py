@@ -31,3 +31,8 @@ class Grid:
             if self.cell[row][column] is None:
                 return True
             return False
+        
+    def set_cell(self, row, column, particle):
+        if not(0 <= row < self.rows and 0 <= column < self.columns):
+            return
+        self.cells[row][column] = particle
