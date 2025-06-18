@@ -1,2 +1,9 @@
-#Final Project for OOP: Falling Sand Simulator
-#Explain each of the 4 pillars of OOP, find sample code implementation in the project. If any of the pillar is  not used in the project you may just explain the concept.
+import pygame
+
+pygame.init()
+
+WINDOW_WIDTH = 800
+WINDOW_HEIGHT = 600
+
+Window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+pygame.display.set_caption("Falling Sand")
