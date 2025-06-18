@@ -11,4 +11,9 @@ class Grid:
     def draw(self, window):
         for row in range(self.rows):
             for column in range(self.columns):
-                pygame.draw.rect(window, LIGHT_GREY, (column * self.cell_size, row * self.cell_size, self.cell_size - 1, self.cell_size - 1))
+                color = LIGHT_GREY
+                particle = self.cells[row][column]
+                if particle is not None:
+                    color = particle.color
+                pygame.draw.rect(window, LIGHT_GREY,
+                                 (column * self.cell_size, row * self.cell_size, self.cell_size - 1, self.cell_size - 1))
